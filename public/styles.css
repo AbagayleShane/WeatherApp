@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	background-image: url("https://www.pbs.org/wgbh/nova/media/original_images/planet-earth-cropped.jpg");
+}
+h1 {
+	font-size: 2rem;
+	text-shadow: 2px 2px black;
+}
+p {
+	color: aliceblue;
+}
+.cityWeather {
+	align-content: center;
+	justify-content: center;
+}
+.container {
+	display: flex;
+	width: 50%;
+	height: auto;
+	flex-direction: column;
+	margin-top: 40%;
+}
+.title-container {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	margin-top: 200px;
+	color: aliceblue;
+}
+
+.form-container {
+	margin: 0 auto;
+	width: 400px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	color: aliceblue;
+}
