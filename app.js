@@ -29,7 +29,7 @@ app.post("/", function (req, res) {
 			const imgURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
 
 			res.send(
-				"<link rel='stylesheet' type='text/css' href='/public/styles.css'><div class='cityWeather'><h1>The temperature in " +
+				"<link rel='stylesheet' type='text/css' href='/styles.css'><div class='cityWeather'><h1>The temperature in " +
 					query +
 					" is currently " +
 					temp +
