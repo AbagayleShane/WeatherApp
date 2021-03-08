@@ -5,6 +5,7 @@ body {
 	background-image: url("https://www.pbs.org/wgbh/nova/media/original_images/planet-earth-cropped.jpg");
 }
 h1 {
+	color: aliceblue;
 	font-size: 2rem;
 	text-shadow: 2px 2px black;
 }

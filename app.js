@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const https = require("https");
 const bodyParser = require("body-parser");
+const ejs = require("ejs");
 
 const app = express();
 
@@ -29,7 +30,7 @@ app.post("/", function (req, res) {
 			const imgURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
 
 			res.send(
-				"<link rel='stylesheet' type='text/css' href='/styles.css'><div class='cityWeather'><h1 style='color:aliceblue'>The temperature in " +
+				"<link rel='stylesheet' type='text/css' href='/styles.css'><div class='cityWeather'><h1>The temperature in " +
 					query +
 					" is currently " +
 					temp +
