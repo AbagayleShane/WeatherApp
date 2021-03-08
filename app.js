@@ -11,7 +11,7 @@ app.get("/", function (req, res) {
 	res.sendFile(__dirname + "/index.html");
 });
 
-app.post("https://abagayleshane.gitgub.io/WeatherApp", function (req, res) {
+app.post("/", function (req, res) {
 	const query = req.body.cityName;
 	const apiKey = process.env.API;
 	const unit = "imperial";
