@@ -11,6 +11,18 @@ app.get("/", function (req, res) {
 	res.sendFile(__dirname + "/index.html");
 });
 
+app.use(function (req, res, next) {
+	res.header(
+		"Access-Control-Allow-Origin",
+		"https://abagayleshane.github.io/WeatherApp/"
+	); // update to match the domain you will make the request from
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin, X-Requested-With, Content-Type, Accept"
+	);
+	next();
+});
+
 app.post("/", function (req, res) {
 	const query = req.body.cityName;
 	const apiKey = process.env.API;
