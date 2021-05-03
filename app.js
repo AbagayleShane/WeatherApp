@@ -36,7 +36,7 @@ app.post("/", function (req, res) {
 					weatherDescription +
 					" for the day.</p><img src=" +
 					imgURL +
-					"></div>"
+					"></div></link>"
 			);
 		});
 	});
