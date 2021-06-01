@@ -10,16 +10,17 @@ app.get("/", function (req, res) {
 	res.sendFile(__dirname + "/index.html");
 });
 
+// vars sent to api as params
 app.post("/", function (req, res) {
 	const query = req.body.cityName;
 	const apiKey = process.env.API;
 	const unit = "imperial";
 	const url =
 		process.env.URL_KEY + query + "&units=" + unit + "&appid=" + apiKey;
-
+	//
 	https.get(url, function (response) {
 		console.log(response.statusCode);
-
+		// parses api data into json format to enable easy access and pulling
 		response.on("data", function (data) {
 			const weatherData = JSON.parse(data);
 			const temp = weatherData.main.temp;
@@ -28,7 +29,7 @@ app.post("/", function (req, res) {
 			const imgURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
 
 			console.log(weatherData);
-
+			// attatches stylesheet to returned page (forecast page)
 			res.send(
 				"<link rel='stylesheet' type='text/css' href='public/styles.css'><div class='cityWeather'><h1>The temperature in " +
 					query +
