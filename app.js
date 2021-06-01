@@ -31,7 +31,7 @@ app.post("/", function (req, res) {
 			console.log(weatherData);
 			// attatches stylesheet to returned page (forecast page)
 			res.send(
-				"<link rel='stylesheet' type='text/css' href='public/styles.css'><div class='cityWeather'><h1>The temperature in " +
+				"<link rel='stylesheet' type='text/css' href='/styles.css'><div class='cityWeather'><h1>The temperature in " +
 					query +
 					" is currently " +
 					tmp +
