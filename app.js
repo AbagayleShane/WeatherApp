@@ -19,11 +19,11 @@ app.post("/", function (req, res) {
 		process.env.URL_KEY + query + "&units=" + unit + "&appid=" + apiKey;
 	//
 	https.get(url, function (response) {
-		console.log(response.statusCode);
+		console.log(response);
 		// parses api data into json format to enable easy access and pulling
 		response.on("data", function (data) {
 			const weatherData = JSON.parse(data);
-			const temp = weatherData.main.temp;
+			const tmp = weatherData.main.temp;
 			const weatherDescription = weatherData.weather[0].description;
 			const icon = weatherData.weather[0].icon;
 			const imgURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
@@ -34,7 +34,7 @@ app.post("/", function (req, res) {
 				"<link rel='stylesheet' type='text/css' href='public/styles.css'><div class='cityWeather'><h1>The temperature in " +
 					query +
 					" is currently " +
-					temp +
+					tmp +
 					"℉</h1><p>Forecast includes: " +
 					weatherDescription +
 					" for the day.</p><img src=" +
