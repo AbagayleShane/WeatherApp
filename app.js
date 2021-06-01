@@ -16,9 +16,9 @@ app.post("/", function (req, res) {
 	const apiKey = process.env.API;
 	const unit = "imperial";
 	const url =
-		process.env.URL_KEY + query + "&units=" + unit + "&appid=" + apiKey;
+		process.env.URL_KEY + "q=" + query + "&units=" + unit + "&appid=" + apiKey;
 	//
-	http.get(url, function (response) {
+	https.get(url, function (response) {
 		console.log(response.statusCode);
 		// parses api data into json format to enable easy access and pulling
 		response.on("data", function (data) {
