@@ -18,8 +18,8 @@ app.post("/", function (req, res) {
 	const url =
 		process.env.URL_KEY + query + "&units=" + unit + "&appid=" + apiKey;
 	//
-	https.get(url, function (response) {
-		console.log(response);
+	http.get(url, function (response) {
+		console.log(response.statusCode);
 		// parses api data into json format to enable easy access and pulling
 		response.on("data", function (data) {
 			const weatherData = JSON.parse(data);
