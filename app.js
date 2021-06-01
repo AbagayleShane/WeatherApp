@@ -31,7 +31,7 @@ app.post("/", function (req, res) {
 			console.log(weatherData);
 			// attatches stylesheet to returned page (forecast page)
 			res.send(
-				"<link rel='stylesheet' type='text/css' href='public/styles.css'><div class='cityWeather'><h1>The temperature in " +
+				"<h1>The temperature in " +
 					query +
 					" is currently " +
 					tmp +
@@ -48,3 +48,5 @@ app.post("/", function (req, res) {
 app.listen(3000, function () {
 	console.log("Server is running on port 3000");
 });
+
+// <link rel='stylesheet' type='text/css' href='public/styles.css'><div class='cityWeather'>
