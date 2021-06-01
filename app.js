@@ -5,7 +5,7 @@ const https = require("https");
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname));
 app.get("/", function (req, res) {
 	res.sendFile(__dirname + "/index.html");
 });
@@ -31,7 +31,7 @@ app.post("/", function (req, res) {
 			console.log(weatherData);
 			// attatches stylesheet to returned page (forecast page)
 			res.send(
-				"<link rel='stylesheet' type='text/css' href='/styles.css'><div class='cityWeather'><h1>The temperature in " +
+				"<link rel='stylesheet' type='text/css' href='styles.css'><div class='cityWeather'><h1>The temperature in " +
 					query +
 					" is currently " +
 					tmp +
